@@ -1,0 +1,331 @@
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 16
+Server version: 8.3.0 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE DATABASE RUHANDE;
+Query OK, 1 row affected (0.04 sec)
+
+mysql> USE RUHANDE;
+Database changed
+mysql> CREATE TABLE NGOMA(ID INT(13), F_NAME CHAR(10), L_NAME CHAR(10), GENDER CHAR(1), PROVINCE CHAR(15), DISTRICT CHAR(15),SECTOR CHAR(15), CELL CHAR(15), E_MAIL VARCHAR(30),PHONE INT(15));
+Query OK, 0 rows affected, 2 warnings (0.07 sec)
+
+mysql> INSERT INTO NGOMA VALUES('1','MUGABE','ALEX','M','NORTHEN','MUSANZE','MUHOZA','KABEZA','al34t5@gmail.com','0786544376')
+    -> INSERT INTO NGOMA VALUES('1','MUGABE','ALEX','M','NORTHEN','MUSANZE','MUHOZA','KABEZA','al34t5@gmail.com','0786544376');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSERT INTO NGOMA VALUES('1','MUGABE','ALEX','M','NORTHEN','MUSANZE','MUHOZA','K' at line 2
+mysql> INSERT INTO NGOMA VALUES('1','MUGABE','ALEX','M','NORTHEN','MUSANZE','MUHOZA','KABEZA','al34t5@gmail.com','0786544376');
+Query OK, 1 row affected (0.05 sec)
+
+mysql>  INSERT INTO NGOMA VALUES('2','ASHIMWE''BELYSE','F','EASTERN','NYAGATARE','NYABITEKERI','KABIRIZI','belyse35@gmail.com','0786565236')
+    ->  INSERT INTO NGOMA VALUES('2','ASHIMWE''BELYSE','F','EASTERN','NYAGATARE','NYABITEKERI','KABIRIZI','belyse35@gmail.com','0786565236');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSERT INTO NGOMA VALUES('2','ASHIMWE''BELYSE','F','EASTERN','NYAGATARE','NYABIT' at line 2
+mysql>  INSERT INTO NGOMA VALUES('2','ASHIMWE''BELYSE','F','EASTERN','NYAGATARE','NYABITEKERI','KABIRIZI','belyse35@gmail.com','0786565236');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> ^C
+mysql>  INSERT INTO NGOMA VALUES('3','MUKAMA''LEA','F','SURTHERN','HUYE','NGOMA','RUHANDE','LEA25@gmail.com','0786455239');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql>  INSERT INTO NGOMA VALUES('3','MUKAMA','LEA','F','SURTHERN','HUYE','NGOMA','RUHANDE','LEA25@gmail.com','0786455239');
+Query OK, 1 row affected (0.00 sec)
+
+mysql>  SELECT*FROM NGOMA;
++------+--------+--------+--------+----------+----------+--------+---------+------------------+-----------+
+| ID   | F_NAME | L_NAME | GENDER | PROVINCE | DISTRICT | SECTOR | CELL    | E_MAIL           | PHONE     |
++------+--------+--------+--------+----------+----------+--------+---------+------------------+-----------+
+|    1 | MUGABE | ALEX   | M      | NORTHEN  | MUSANZE  | MUHOZA | KABEZA  | al34t5@gmail.com | 786544376 |
+|    3 | MUKAMA | LEA    | F      | SURTHERN | HUYE     | NGOMA  | RUHANDE | LEA25@gmail.com  | 786455239 |
++------+--------+--------+--------+----------+----------+--------+---------+------------------+-----------+
+2 rows in set (0.00 sec)
+
+mysql>  INSERT INTO NGOMA VALUES('2','ASHIMWE','BELYSE','F','EASTERN','NYAGATARE','NYABITEKERI','KABIRIZI','belyse35@gmail.com','0786565236');
+Query OK, 1 row affected (0.00 sec)
+
+mysql>  INSERT INTO NGOMA VALUES('4','E','BELYSE','F','EASTERN','NYAGATARE','NYABITEKERI','KABIRIZI','belyse35@gmail.com','0786565236');
+Query OK, 1 row affected (0.00 sec)
+
+mysql>  INSERT INTO NGOMA VALUES('4','TWIZEYIMANA','ONES','M','KIGALI','NYARUGENGE','GISHWATI','NYABUGOGO','ONE22@gmail.com','0785464636');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql>  INSERT INTO NGOMA VALUES('5','MUREKATETE','KELLEN','F','KIGALI','NYARUGENGE','GISHWATI','NYABUGOGO','kellen92@gmail.com','0780984636');
+Query OK, 1 row affected (0.00 sec)
+
+mysql>  INSERT INTO NGOMA VALUES('6','MUHIMPUNDU','CHALRENE','F','KIGALI','KUCUKIRO','NYARUGENGE','NYABUGOGO','kellen92@gmail.com','0780984636');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT*FROM NGOMA;
++------+------------+----------+--------+----------+------------+-------------+-----------+--------------------+-----------+
+| ID   | F_NAME     | L_NAME   | GENDER | PROVINCE | DISTRICT   | SECTOR      | CELL      | E_MAIL             | PHONE     |
++------+------------+----------+--------+----------+------------+-------------+-----------+--------------------+-----------+
+|    1 | MUGABE     | ALEX     | M      | NORTHEN  | MUSANZE    | MUHOZA      | KABEZA    | al34t5@gmail.com   | 786544376 |
+|    3 | MUKAMA     | LEA      | F      | SURTHERN | HUYE       | NGOMA       | RUHANDE   | LEA25@gmail.com    | 786455239 |
+|    2 | ASHIMWE    | BELYSE   | F      | EASTERN  | NYAGATARE  | NYABITEKERI | KABIRIZI  | belyse35@gmail.com | 786565236 |
+|    4 | E          | BELYSE   | F      | EASTERN  | NYAGATARE  | NYABITEKERI | KABIRIZI  | belyse35@gmail.com | 786565236 |
+|    4 | TWIZEYIMAN | ONES     | M      | KIGALI   | NYARUGENGE | GISHWATI    | NYABUGOGO | ONE22@gmail.com    | 785464636 |
+|    5 | MUREKATETE | KELLEN   | F      | KIGALI   | NYARUGENGE | GISHWATI    | NYABUGOGO | kellen92@gmail.com | 780984636 |
+|    6 | MUHIMPUNDU | CHALRENE | F      | KIGALI   | KUCUKIRO   | NYARUGENGE  | NYABUGOGO | kellen92@gmail.com | 780984636 |
++------+------------+----------+--------+----------+------------+-------------+-----------+--------------------+-----------+
+7 rows in set (0.00 sec)
+
+mysql> ATLER TABLE NGOMA DROP ID='4';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ATLER TABLE NGOMA DROP ID='4'' at line 1
+mysql> ALTER TABLE NGOMA DROP ID='4';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '='4'' at line 1
+mysql>  INSERT INTO NGOMA VALUES('7','ISEZERANO','CHALRENE','F','KIGALI','KUCUKIRO','NYARUGENGE','NYABUGOGO','kellen92@gmail.com','0780984636');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> DELETE FROM NGOMA WHERE ID='4';
+Query OK, 2 rows affected (0.05 sec)
+
+mysql> SELECT*FROM NGOMA;
++------+------------+----------+--------+----------+------------+-------------+-----------+--------------------+-----------+
+| ID   | F_NAME     | L_NAME   | GENDER | PROVINCE | DISTRICT   | SECTOR      | CELL      | E_MAIL             | PHONE     |
++------+------------+----------+--------+----------+------------+-------------+-----------+--------------------+-----------+
+|    1 | MUGABE     | ALEX     | M      | NORTHEN  | MUSANZE    | MUHOZA      | KABEZA    | al34t5@gmail.com   | 786544376 |
+|    3 | MUKAMA     | LEA      | F      | SURTHERN | HUYE       | NGOMA       | RUHANDE   | LEA25@gmail.com    | 786455239 |
+|    2 | ASHIMWE    | BELYSE   | F      | EASTERN  | NYAGATARE  | NYABITEKERI | KABIRIZI  | belyse35@gmail.com | 786565236 |
+|    5 | MUREKATETE | KELLEN   | F      | KIGALI   | NYARUGENGE | GISHWATI    | NYABUGOGO | kellen92@gmail.com | 780984636 |
+|    6 | MUHIMPUNDU | CHALRENE | F      | KIGALI   | KUCUKIRO   | NYARUGENGE  | NYABUGOGO | kellen92@gmail.com | 780984636 |
+|    7 | ISEZERANO  | CHALRENE | F      | KIGALI   | KUCUKIRO   | NYARUGENGE  | NYABUGOGO | kellen92@gmail.com | 780984636 |
++------+------------+----------+--------+----------+------------+-------------+-----------+--------------------+-----------+
+6 rows in set (0.00 sec)
+
+mysql>  INSERT INTO NGOMA VALUES('4','ASHIMWE','BELYSE','F','EASTHERN','NYAGATARE','NGONA','KABIRIZI','belyse2@gmail.com','0788765636');
+Query OK, 1 row affected (0.00 sec)
+
+mysql>  INSERT INTO NGOMA VALUES('8','IHIMBAZWE','GENEVIEVE','F','SOURTHEN','HUYE','NGONA','RUHANDE','genee99@gmail.com','0788767464');
+Query OK, 1 row affected (0.00 sec)
+
+mysql>  INSERT INTO NGOMA VALUES('9','NIYONSABA','IRUMVA','M','SOURTHEN','HUYE','NGONA','RUHANDE','e99@gmail.com','0788767464');
+Query OK, 1 row affected (0.00 sec)
+
+mysql>  INSERT INTO NGOMA VALUES('10','A','IRUMVA','M','SOURTHEN','HUYE','NGONA','RUHANDE','e99@gmail.com','0788767464');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT*FROM NGOMA;
++------+------------+-----------+--------+----------+------------+-------------+-----------+--------------------+-----------+
+| ID   | F_NAME     | L_NAME    | GENDER | PROVINCE | DISTRICT   | SECTOR      | CELL      | E_MAIL             | PHONE     |
++------+------------+-----------+--------+----------+------------+-------------+-----------+--------------------+-----------+
+|    1 | MUGABE     | ALEX      | M      | NORTHEN  | MUSANZE    | MUHOZA      | KABEZA    | al34t5@gmail.com   | 786544376 |
+|    3 | MUKAMA     | LEA       | F      | SURTHERN | HUYE       | NGOMA       | RUHANDE   | LEA25@gmail.com    | 786455239 |
+|    2 | ASHIMWE    | BELYSE    | F      | EASTERN  | NYAGATARE  | NYABITEKERI | KABIRIZI  | belyse35@gmail.com | 786565236 |
+|    8 | IHIMBAZWE  | GENEVIEVE | F      | SOURTHEN | HUYE       | NGONA       | RUHANDE   | genee99@gmail.com  | 788767464 |
+|    4 | ASHIMWE    | BELYSE    | F      | EASTHERN | NYAGATARE  | NGONA       | KABIRIZI  | belyse2@gmail.com  | 788765636 |
+|    5 | MUREKATETE | KELLEN    | F      | KIGALI   | NYARUGENGE | GISHWATI    | NYABUGOGO | kellen92@gmail.com | 780984636 |
+|    6 | MUHIMPUNDU | CHALRENE  | F      | KIGALI   | KUCUKIRO   | NYARUGENGE  | NYABUGOGO | kellen92@gmail.com | 780984636 |
+|    7 | ISEZERANO  | CHALRENE  | F      | KIGALI   | KUCUKIRO   | NYARUGENGE  | NYABUGOGO | kellen92@gmail.com | 780984636 |
+|    9 | NIYONSABA  | IRUMVA    | M      | SOURTHEN | HUYE       | NGONA       | RUHANDE   | e99@gmail.com      | 788767464 |
+|   10 | A          | IRUMVA    | M      | SOURTHEN | HUYE       | NGONA       | RUHANDE   | e99@gmail.com      | 788767464 |
++------+------------+-----------+--------+----------+------------+-------------+-----------+--------------------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> DELETE FROM NGOMA WHERE ID='9';
+Query OK, 1 row affected (0.00 sec)
+
+mysql> DELETE FROM NGOMA WHERE ID='10';
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT*FROM NGOMA;
++------+------------+-----------+--------+----------+------------+-------------+-----------+--------------------+-----------+
+| ID   | F_NAME     | L_NAME    | GENDER | PROVINCE | DISTRICT   | SECTOR      | CELL      | E_MAIL             | PHONE     |
++------+------------+-----------+--------+----------+------------+-------------+-----------+--------------------+-----------+
+|    1 | MUGABE     | ALEX      | M      | NORTHEN  | MUSANZE    | MUHOZA      | KABEZA    | al34t5@gmail.com   | 786544376 |
+|    3 | MUKAMA     | LEA       | F      | SURTHERN | HUYE       | NGOMA       | RUHANDE   | LEA25@gmail.com    | 786455239 |
+|    2 | ASHIMWE    | BELYSE    | F      | EASTERN  | NYAGATARE  | NYABITEKERI | KABIRIZI  | belyse35@gmail.com | 786565236 |
+|    8 | IHIMBAZWE  | GENEVIEVE | F      | SOURTHEN | HUYE       | NGONA       | RUHANDE   | genee99@gmail.com  | 788767464 |
+|    4 | ASHIMWE    | BELYSE    | F      | EASTHERN | NYAGATARE  | NGONA       | KABIRIZI  | belyse2@gmail.com  | 788765636 |
+|    5 | MUREKATETE | KELLEN    | F      | KIGALI   | NYARUGENGE | GISHWATI    | NYABUGOGO | kellen92@gmail.com | 780984636 |
+|    6 | MUHIMPUNDU | CHALRENE  | F      | KIGALI   | KUCUKIRO   | NYARUGENGE  | NYABUGOGO | kellen92@gmail.com | 780984636 |
+|    7 | ISEZERANO  | CHALRENE  | F      | KIGALI   | KUCUKIRO   | NYARUGENGE  | NYABUGOGO | kellen92@gmail.com | 780984636 |
++------+------------+-----------+--------+----------+------------+-------------+-----------+--------------------+-----------+
+8 rows in set (0.00 sec)
+
+mysql>  INSERT INTO NGOMA VALUES('8','IRUMVA','ELIA','M','SOURTHEN','HUYE','NGONA','RUHANDE','elia9@gmail.com','0788767464');
+Query OK, 1 row affected (0.00 sec)
+
+mysql>  INSERT INTO NGOMA VALUES('8','KUNDWA','JEANMARIE','M','NORTHEN','GAKENKE','MUKOKWE','RUHONDO','jean49@gmail.com','0788774645');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> DELETE FROM NGOMA WHERE ID='8';
+Query OK, 3 rows affected (0.00 sec)
+
+mysql>  INSERT INTO NGOMA VALUES('9','KUNDWA','JEANMARIE','M','NORTHEN','GAKENKE','MUKOKWE','RUHONDO','jean49@gmail.com','0788774645');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT*FROM NGOMA;
++------+------------+-----------+--------+----------+------------+-------------+-----------+--------------------+-----------+
+| ID   | F_NAME     | L_NAME    | GENDER | PROVINCE | DISTRICT   | SECTOR      | CELL      | E_MAIL             | PHONE     |
++------+------------+-----------+--------+----------+------------+-------------+-----------+--------------------+-----------+
+|    1 | MUGABE     | ALEX      | M      | NORTHEN  | MUSANZE    | MUHOZA      | KABEZA    | al34t5@gmail.com   | 786544376 |
+|    3 | MUKAMA     | LEA       | F      | SURTHERN | HUYE       | NGOMA       | RUHANDE   | LEA25@gmail.com    | 786455239 |
+|    2 | ASHIMWE    | BELYSE    | F      | EASTERN  | NYAGATARE  | NYABITEKERI | KABIRIZI  | belyse35@gmail.com | 786565236 |
+|    4 | ASHIMWE    | BELYSE    | F      | EASTHERN | NYAGATARE  | NGONA       | KABIRIZI  | belyse2@gmail.com  | 788765636 |
+|    5 | MUREKATETE | KELLEN    | F      | KIGALI   | NYARUGENGE | GISHWATI    | NYABUGOGO | kellen92@gmail.com | 780984636 |
+|    6 | MUHIMPUNDU | CHALRENE  | F      | KIGALI   | KUCUKIRO   | NYARUGENGE  | NYABUGOGO | kellen92@gmail.com | 780984636 |
+|    7 | ISEZERANO  | CHALRENE  | F      | KIGALI   | KUCUKIRO   | NYARUGENGE  | NYABUGOGO | kellen92@gmail.com | 780984636 |
+|    9 | KUNDWA     | JEANMARIE | M      | NORTHEN  | GAKENKE    | MUKOKWE     | RUHONDO   | jean49@gmail.com   | 788774645 |
++------+------------+-----------+--------+----------+------------+-------------+-----------+--------------------+-----------+
+8 rows in set (0.00 sec)
+
+mysql>  INSERT INTO NGOMA VALUES('8','IRUMVA','ELIA','M','SOURTHEN','HUYE','NGONA','RUHANDE','elia9@gmail.com','0788767464');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT*FROM NGOMA;
++------+------------+-----------+--------+----------+------------+-------------+-----------+--------------------+-----------+
+| ID   | F_NAME     | L_NAME    | GENDER | PROVINCE | DISTRICT   | SECTOR      | CELL      | E_MAIL             | PHONE     |
++------+------------+-----------+--------+----------+------------+-------------+-----------+--------------------+-----------+
+|    1 | MUGABE     | ALEX      | M      | NORTHEN  | MUSANZE    | MUHOZA      | KABEZA    | al34t5@gmail.com   | 786544376 |
+|    3 | MUKAMA     | LEA       | F      | SURTHERN | HUYE       | NGOMA       | RUHANDE   | LEA25@gmail.com    | 786455239 |
+|    2 | ASHIMWE    | BELYSE    | F      | EASTERN  | NYAGATARE  | NYABITEKERI | KABIRIZI  | belyse35@gmail.com | 786565236 |
+|    4 | ASHIMWE    | BELYSE    | F      | EASTHERN | NYAGATARE  | NGONA       | KABIRIZI  | belyse2@gmail.com  | 788765636 |
+|    5 | MUREKATETE | KELLEN    | F      | KIGALI   | NYARUGENGE | GISHWATI    | NYABUGOGO | kellen92@gmail.com | 780984636 |
+|    6 | MUHIMPUNDU | CHALRENE  | F      | KIGALI   | KUCUKIRO   | NYARUGENGE  | NYABUGOGO | kellen92@gmail.com | 780984636 |
+|    7 | ISEZERANO  | CHALRENE  | F      | KIGALI   | KUCUKIRO   | NYARUGENGE  | NYABUGOGO | kellen92@gmail.com | 780984636 |
+|    9 | KUNDWA     | JEANMARIE | M      | NORTHEN  | GAKENKE    | MUKOKWE     | RUHONDO   | jean49@gmail.com   | 788774645 |
+|    8 | IRUMVA     | ELIA      | M      | SOURTHEN | HUYE       | NGONA       | RUHANDE   | elia9@gmail.com    | 788767464 |
++------+------------+-----------+--------+----------+------------+-------------+-----------+--------------------+-----------+
+9 rows in set (0.00 sec)
+
+mysql>  INSERT INTO NGOMA VALUES('10','TWIZEYIMANA','ONESPHORE','M','KIGALI','GIKONDO','KIBAGABAGA','NYABUGOGO','ones33@gmail.com','0788774645');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> SELECT*FROM NGOMA;
++------+------------+-----------+--------+----------+------------+-------------+-----------+--------------------+-----------+
+| ID   | F_NAME     | L_NAME    | GENDER | PROVINCE | DISTRICT   | SECTOR      | CELL      | E_MAIL             | PHONE     |
++------+------------+-----------+--------+----------+------------+-------------+-----------+--------------------+-----------+
+|    1 | MUGABE     | ALEX      | M      | NORTHEN  | MUSANZE    | MUHOZA      | KABEZA    | al34t5@gmail.com   | 786544376 |
+|    3 | MUKAMA     | LEA       | F      | SURTHERN | HUYE       | NGOMA       | RUHANDE   | LEA25@gmail.com    | 786455239 |
+|    2 | ASHIMWE    | BELYSE    | F      | EASTERN  | NYAGATARE  | NYABITEKERI | KABIRIZI  | belyse35@gmail.com | 786565236 |
+|   10 | TWIZEYIMAN | ONESPHORE | M      | KIGALI   | GIKONDO    | KIBAGABAGA  | NYABUGOGO | ones33@gmail.com   | 788774645 |
+|    4 | ASHIMWE    | BELYSE    | F      | EASTHERN | NYAGATARE  | NGONA       | KABIRIZI  | belyse2@gmail.com  | 788765636 |
+|    5 | MUREKATETE | KELLEN    | F      | KIGALI   | NYARUGENGE | GISHWATI    | NYABUGOGO | kellen92@gmail.com | 780984636 |
+|    6 | MUHIMPUNDU | CHALRENE  | F      | KIGALI   | KUCUKIRO   | NYARUGENGE  | NYABUGOGO | kellen92@gmail.com | 780984636 |
+|    7 | ISEZERANO  | CHALRENE  | F      | KIGALI   | KUCUKIRO   | NYARUGENGE  | NYABUGOGO | kellen92@gmail.com | 780984636 |
+|    9 | KUNDWA     | JEANMARIE | M      | NORTHEN  | GAKENKE    | MUKOKWE     | RUHONDO   | jean49@gmail.com   | 788774645 |
+|    8 | IRUMVA     | ELIA      | M      | SOURTHEN | HUYE       | NGONA       | RUHANDE   | elia9@gmail.com    | 788767464 |
++------+------------+-----------+--------+----------+------------+-------------+-----------+--------------------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> ALTER TABLE NGOMA ADD MARKS INT(12);
+Query OK, 10 rows affected, 1 warning (0.23 sec)
+Records: 10  Duplicates: 0  Warnings: 1
+
+mysql> SELECT*FROM NGOMA;
++------+------------+-----------+--------+----------+------------+-------------+-----------+--------------------+-----------+-------+
+| ID   | F_NAME     | L_NAME    | GENDER | PROVINCE | DISTRICT   | SECTOR      | CELL      | E_MAIL             | PHONE     | MARKS |
++------+------------+-----------+--------+----------+------------+-------------+-----------+--------------------+-----------+-------+
+|    1 | MUGABE     | ALEX      | M      | NORTHEN  | MUSANZE    | MUHOZA      | KABEZA    | al34t5@gmail.com   | 786544376 |  NULL |
+|    3 | MUKAMA     | LEA       | F      | SURTHERN | HUYE       | NGOMA       | RUHANDE   | LEA25@gmail.com    | 786455239 |  NULL |
+|    2 | ASHIMWE    | BELYSE    | F      | EASTERN  | NYAGATARE  | NYABITEKERI | KABIRIZI  | belyse35@gmail.com | 786565236 |  NULL |
+|   10 | TWIZEYIMAN | ONESPHORE | M      | KIGALI   | GIKONDO    | KIBAGABAGA  | NYABUGOGO | ones33@gmail.com   | 788774645 |  NULL |
+|    4 | ASHIMWE    | BELYSE    | F      | EASTHERN | NYAGATARE  | NGONA       | KABIRIZI  | belyse2@gmail.com  | 788765636 |  NULL |
+|    5 | MUREKATETE | KELLEN    | F      | KIGALI   | NYARUGENGE | GISHWATI    | NYABUGOGO | kellen92@gmail.com | 780984636 |  NULL |
+|    6 | MUHIMPUNDU | CHALRENE  | F      | KIGALI   | KUCUKIRO   | NYARUGENGE  | NYABUGOGO | kellen92@gmail.com | 780984636 |  NULL |
+|    7 | ISEZERANO  | CHALRENE  | F      | KIGALI   | KUCUKIRO   | NYARUGENGE  | NYABUGOGO | kellen92@gmail.com | 780984636 |  NULL |
+|    9 | KUNDWA     | JEANMARIE | M      | NORTHEN  | GAKENKE    | MUKOKWE     | RUHONDO   | jean49@gmail.com   | 788774645 |  NULL |
+|    8 | IRUMVA     | ELIA      | M      | SOURTHEN | HUYE       | NGONA       | RUHANDE   | elia9@gmail.com    | 788767464 |  NULL |
++------+------------+-----------+--------+----------+------------+-------------+-----------+--------------------+-----------+-------+
+10 rows in set (0.00 sec)
+
+mysql> UPDATE NGOMA SET MARKS='89' WHERE ID='1';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET MARKS='90' WHERE ID='2';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET MARKS='95' WHERE ID='3';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET MARKS='55' WHERE ID='4';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET MARKS='78' WHERE ID='5';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET MARKS='97' WHERE ID='6';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET MARKS='86' WHERE ID='7';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET MARKS='75' WHERE ID='8';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET MARKS='5' WHERE ID='9';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET MARKS='76' WHERE ID='10';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT*FROM NGOMA;
++------+------------+-----------+--------+----------+------------+-------------+-----------+--------------------+-----------+-------+
+| ID   | F_NAME     | L_NAME    | GENDER | PROVINCE | DISTRICT   | SECTOR      | CELL      | E_MAIL             | PHONE     | MARKS |
++------+------------+-----------+--------+----------+------------+-------------+-----------+--------------------+-----------+-------+
+|    1 | MUGABE     | ALEX      | M      | NORTHEN  | MUSANZE    | MUHOZA      | KABEZA    | al34t5@gmail.com   | 786544376 |    89 |
+|    3 | MUKAMA     | LEA       | F      | SURTHERN | HUYE       | NGOMA       | RUHANDE   | LEA25@gmail.com    | 786455239 |    95 |
+|    2 | ASHIMWE    | BELYSE    | F      | EASTERN  | NYAGATARE  | NYABITEKERI | KABIRIZI  | belyse35@gmail.com | 786565236 |    90 |
+|   10 | TWIZEYIMAN | ONESPHORE | M      | KIGALI   | GIKONDO    | KIBAGABAGA  | NYABUGOGO | ones33@gmail.com   | 788774645 |    76 |
+|    4 | ASHIMWE    | BELYSE    | F      | EASTHERN | NYAGATARE  | NGONA       | KABIRIZI  | belyse2@gmail.com  | 788765636 |    55 |
+|    5 | MUREKATETE | KELLEN    | F      | KIGALI   | NYARUGENGE | GISHWATI    | NYABUGOGO | kellen92@gmail.com | 780984636 |    78 |
+|    6 | MUHIMPUNDU | CHALRENE  | F      | KIGALI   | KUCUKIRO   | NYARUGENGE  | NYABUGOGO | kellen92@gmail.com | 780984636 |    97 |
+|    7 | ISEZERANO  | CHALRENE  | F      | KIGALI   | KUCUKIRO   | NYARUGENGE  | NYABUGOGO | kellen92@gmail.com | 780984636 |    86 |
+|    9 | KUNDWA     | JEANMARIE | M      | NORTHEN  | GAKENKE    | MUKOKWE     | RUHONDO   | jean49@gmail.com   | 788774645 |     5 |
+|    8 | IRUMVA     | ELIA      | M      | SOURTHEN | HUYE       | NGONA       | RUHANDE   | elia9@gmail.com    | 788767464 |    75 |
++------+------------+-----------+--------+----------+------------+-------------+-----------+--------------------+-----------+-------+
+10 rows in set (0.00 sec)
+
+mysql> ALTER TABLE NGOMA DROP CELL;
+Query OK, 10 rows affected (0.32 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT*FROM NGOMA;
++------+------------+-----------+--------+----------+------------+-------------+--------------------+-----------+-------+
+| ID   | F_NAME     | L_NAME    | GENDER | PROVINCE | DISTRICT   | SECTOR      | E_MAIL             | PHONE     | MARKS |
++------+------------+-----------+--------+----------+------------+-------------+--------------------+-----------+-------+
+|    1 | MUGABE     | ALEX      | M      | NORTHEN  | MUSANZE    | MUHOZA      | al34t5@gmail.com   | 786544376 |    89 |
+|    3 | MUKAMA     | LEA       | F      | SURTHERN | HUYE       | NGOMA       | LEA25@gmail.com    | 786455239 |    95 |
+|    2 | ASHIMWE    | BELYSE    | F      | EASTERN  | NYAGATARE  | NYABITEKERI | belyse35@gmail.com | 786565236 |    90 |
+|   10 | TWIZEYIMAN | ONESPHORE | M      | KIGALI   | GIKONDO    | KIBAGABAGA  | ones33@gmail.com   | 788774645 |    76 |
+|    4 | ASHIMWE    | BELYSE    | F      | EASTHERN | NYAGATARE  | NGONA       | belyse2@gmail.com  | 788765636 |    55 |
+|    5 | MUREKATETE | KELLEN    | F      | KIGALI   | NYARUGENGE | GISHWATI    | kellen92@gmail.com | 780984636 |    78 |
+|    6 | MUHIMPUNDU | CHALRENE  | F      | KIGALI   | KUCUKIRO   | NYARUGENGE  | kellen92@gmail.com | 780984636 |    97 |
+|    7 | ISEZERANO  | CHALRENE  | F      | KIGALI   | KUCUKIRO   | NYARUGENGE  | kellen92@gmail.com | 780984636 |    86 |
+|    9 | KUNDWA     | JEANMARIE | M      | NORTHEN  | GAKENKE    | MUKOKWE     | jean49@gmail.com   | 788774645 |     5 |
+|    8 | IRUMVA     | ELIA      | M      | SOURTHEN | HUYE       | NGONA       | elia9@gmail.com    | 788767464 |    75 |
++------+------------+-----------+--------+----------+------------+-------------+--------------------+-----------+-------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT* FROM NGOMA WHERE GENDER='M' AND PROVINCE='NORTHEN';
++------+--------+-----------+--------+----------+----------+---------+------------------+-----------+-------+
+| ID   | F_NAME | L_NAME    | GENDER | PROVINCE | DISTRICT | SECTOR  | E_MAIL           | PHONE     | MARKS |
++------+--------+-----------+--------+----------+----------+---------+------------------+-----------+-------+
+|    1 | MUGABE | ALEX      | M      | NORTHEN  | MUSANZE  | MUHOZA  | al34t5@gmail.com | 786544376 |    89 |
+|    9 | KUNDWA | JEANMARIE | M      | NORTHEN  | GAKENKE  | MUKOKWE | jean49@gmail.com | 788774645 |     5 |
++------+--------+-----------+--------+----------+----------+---------+------------------+-----------+-------+
+2 rows in set (0.00 sec)
+mysql> SELECT * FROM NGOMA WHERE E_MAIL='kellen92@gmail.com';
++------+------------+----------+--------+----------+------------+------------+--------------------+-----------+-------+
+| ID   | F_NAME     | L_NAME   | GENDER | PROVINCE | DISTRICT   | SECTOR     | E_MAIL             | PHONE     | MARKS |
++------+------------+----------+--------+----------+------------+------------+--------------------+-----------+-------+
+|    5 | MUREKATETE | KELLEN   | F      | KIGALI   | NYARUGENGE | GISHWATI   | kellen92@gmail.com | 780984636 |    78 |
+|    6 | MUHIMPUNDU | CHALRENE | F      | KIGALI   | KUCUKIRO   | NYARUGENGE | kellen92@gmail.com | 780984636 |    97 |
+|    7 | ISEZERANO  | CHALRENE | F      | KIGALI   | KUCUKIRO   | NYARUGENGE | kellen92@gmail.com | 780984636 |    86 |
++------+------------+----------+--------+----------+------------+------------+--------------------+-----------+-------+
+3 rows in set (0.00 sec)
